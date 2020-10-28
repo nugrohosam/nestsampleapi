@@ -10,11 +10,6 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
   @Get('docs')
   @Redirect('https://docs.nestjs.com', 307)
   getDocs(@Query('version') version) {
